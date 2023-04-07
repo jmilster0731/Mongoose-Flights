@@ -1,0 +1,80 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  margin: 0;
+}
+
+a {
+  color: #00B7FF;
+}
+
+nav {
+  height: 40px;
+  padding: 5px;
+  background-color: lightgray;
+  margin: 0;
+}
+
+nav a {
+  color: black;
+  margin: 10px;
+  text-decoration: none;
+  height: 100%;
+}
+
+nav a:hover{
+  color: white;
+  background-color: black;
+}
+
+.flight-index {
+  display: grid;
+  width: 80%;
+  grid-template-columns: repeat(5, 1fr);
+  margin: auto;
+}
+
+.flight-index-header {
+  font-weight: bold;
+  text-align: center;
+}
+
+.flight-index-cell {
+  text-align: center;
+}
+
+form {
+  width: 80%;
+  padding-top: 10px;
+  margin: auto;
+}
+
+label {
+  min-width: 20%;
+}
+
+input {
+  width: 80%;
+  float: right;
+}
+
+select {
+  width: 80%;
+  float: right;
+}
+
+.destinations-container {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  width: 80%;
+}
+
+.destination-container {
+  display: grid;
+  width: 100%;
+  grid-template-columns: 1fr;
+}
+
+.destination-header {
+  width: 100%;
+}

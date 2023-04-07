@@ -1,0 +1,54 @@
+<%- include('../partials/header') %>
+
+<br>
+<center>
+<h1><%= flight.airline %> Flight <%= flight.flightNo %> departs from <%= flight.airport %> at <%= flight.departs %></h3>
+<h2>to the following Destinations</h2>
+
+<div class = "destinations-container">
+    <% flight.destinations.forEach(function(d) { %>
+        <div class="destination-container">
+            <div class="destination-header"><%= d.airport %></div>
+            <div class="destination-time"><%= d.arrival%></div>
+        </div>
+    <% }) %>
+</div>
+
+<h2>Are we missing a stop? Feel free to add it in!</h2>
+
+<form method="POST" action="/flights/<%= flight._id %>/destinations">
+    <label>Airport</label>
+        <select name="airport">
+            <option value="AUS">Austin</option>
+            <option value="DFW">Dallas</option>
+            <option value="DEN">Denver</option>
+            <option value="LAX">Los Angeles</option>
+            <option value="STL">St Louis</option>
+            <option value="SAN">San Diego</option>
+            <option value="CVG" selected>Cincinnati</option>
+        </select>
+        <br><br>
+    <label>Arrival Time</label>
+        <input type="datetime-local" name="arrival">
+    
+    <input type="submit" value="Add Destination">
+</form>
+
+<br><br>
+
+<div>
+    <% tickets.forEach((t) => { %>
+        <div class = "ticket-seat"> <%= t.seat %> </div>
+        <div class = "ticket-price"> $<%= t.price %> </div>
+    <% }) %>
+</div>
+
+<br><br>
+
+<h2>Are we missing a ticket? Feel free to add it in!</h2>
+<h3><a href="/flights/<%= flight._id %>/tickets/new">New Ticket</a></h3>
+
+
+</center>
+
+<%- include('../partials/footer') %>

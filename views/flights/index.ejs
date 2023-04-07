@@ -1,0 +1,19 @@
+<%- include('../partials/header') %>
+
+<div class="flight-index">
+    <div class="flight-index-header">Airline</div>
+    <div class="flight-index-header">Airport</div>
+    <div class="flight-index-header">Flight#</div>
+    <div class="flight-index-header">Departure</div>
+    <div class="flight-index-header">Flight Details</div>
+
+    <% flights.forEach(function(f) { %>
+        <div class="flight-index-cell"><%= f.airline %></div>
+        <div class="flight-index-cell"><%= f.airport %></div>
+        <div class="flight-index-cell"><%= f.flightNo %></div>
+        <div class="flight-index-cell"><%= f.departs %></div>
+        <div class="flight-index-cell"><a href="/flights/<%= f._id %>">INFO</a></div>
+    <% }); %>
+</div>
+
+<%- include('../partials/footer') %>
